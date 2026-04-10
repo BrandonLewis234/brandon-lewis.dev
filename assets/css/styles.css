@@ -1,0 +1,139 @@
+/* Colors sourced from: https://www.iamsajid.com/colors/ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+:root {    
+    --ff: "Syne", sans-serif;
+    --ff2: "Fira Code", monospace;
+    --h1: 800 2rem/1.2em var(--ff);
+    --p: 400 1rem/1.5em var(--ff);
+    --p-code: 300 .7rem/2em var(--ff2);
+    --hue: 0;
+    --color-primary: hsl(259, 50%, 90%);
+    --color-secondary: hsl(259, 50%, 10%);
+    --color-tertiary: hsl(319, 80%, 20%);
+    --color-accent: hsl(199, 80%, 20%);
+    --pre-color-primary: hsl(259, 50%, 98%);
+}
+
+.dark {
+    --color-primary: hsl(259, 50%, 10%);
+    --color-secondary: hsl(259, 50%, 90%);
+    --color-tertiary: hsl(319, 80%, 80%);
+    --color-accent: hsl(199, 80%, 80%);
+    --pre-color-primary: hsl(259, 50%, 15%);
+}
+
+
+body {
+    width: 90%;
+    max-width: 1080px;
+    margin: 40px auto;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    gap: 20px;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-family: var(--ff);
+    font: var(--p);
+}
+
+.c1 {
+    flex: 1;
+}
+
+#dark {
+    width: 12px;
+    fill: var(--color-secondary);
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--pre-color-primary);
+    padding: 8px 11px;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px hsla(var(--hue), 50%, 10%, .3), 0 4px 4px hsla(var(--hue), 50%, 10%, .15);
+}
+
+a {
+    font: 800 1rem/1em var(--ff);
+    color: var(--color-accent);
+    margin-right: 20px;
+    text-underline-offset: 4px;
+}
+
+h1 {
+    font: var(--h1);
+}
+
+span {
+    color: var(--color-accent);
+}
+
+.controls {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70%;
+    height: 4px;
+    background: var(--color-tertiary);
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 24px;
+    background: var(--color-tertiary);
+    border-radius: 4px;
+}
+
+input[type="number"] {
+    -webkit-appearance: none;
+    appearance: none;
+    color: var(--color-secondary);
+    font: var(--p);
+    padding: 8px;
+    width: 40px;
+    height: 20px;
+    border: solid 1px var(--color-tertiary);
+    border-radius: 4px;
+    background: transparent;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.c2 {
+    flex: 1;
+    font: var(--p-code);
+    background: var(--pre-color-primary);
+    color: var(--color-secondary);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px hsla(var(--hue), 50%, 10%, .3), 0 4px 4px hsla(var(--hue), 50%, 10%, .15);
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+        height: 90vh;
+    }
+    .c2 {
+        width: 90%;
+        padding: 20px;
+    }
+}
