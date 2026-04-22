@@ -2,11 +2,11 @@
 <html>
 <head>
     <link href="assets/css/styles.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/38ef0d6706.js" crossorigin="anonymous"></script>
 </head>
-<body class="dark">
-    <script src="assets/js/toggle.js"></script>
-
+<body>
+    <script src="assets/js/persistent-elements.js"></script>
+    
     <!-- Expandable Sidebar -->
     <aside class="sidebar">
         <nav>
@@ -18,7 +18,7 @@
                     </a>
                 </li>                
                 <li>
-                    <a href="#" class="active-page">
+                    <a href="index.html" class="active-page">
                         <i class="fa fa-home"></i>
                         <span>Home</span>
                     </a>
@@ -31,7 +31,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-pencil"></i>
+                        <i class="fa fa-lightbulb"></i>
                         <span>Projects</span>
                     </a>
                 </li>                 
@@ -42,8 +42,8 @@
                     </a>
                 </li>      
                 <li>
-                    <a  onclick="toggle_dark_mode()" id="dark_mode_toggle">
-                        <i class="fa fa-moon-o"></i>
+                    <a onclick="themeToggle()" id="theme-toggle">
+                        <i class="fa fa-moon"></i>
                         <span>Toggle Dark Mode</span>
                     </a>
                 </li>
@@ -51,15 +51,10 @@
         </nav>
     </aside>
 
-    <script src="assets/js/sidebar.js"></script>
-
     <main>
         <h1>Welcome</h1>
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Nisi odit cupiditate accusantium minima voluptatum ipsam a, 
-            optio omnis unde exercitationem aperiam provident deleniti perspiciatis, 
-            eligendi, quo dolores accusamus fugit! Amet.
+            This webpage is under construction. Please come back later!
         </p>
     </main>
 

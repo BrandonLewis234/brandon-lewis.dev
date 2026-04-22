@@ -10,22 +10,22 @@
     --p: 400 1rem/1.5em var(--ff);
     --p-code: 300 .7rem/2em var(--ff2);
     --hue: 0;
-    --color-primary: hsl(259, 50%, 90%);
-    --color-secondary: hsl(259, 50%, 10%);
-    --color-tertiary: hsl(319, 80%, 20%);
-    --color-accent: hsl(199, 80%, 20%);
-    --pre-color-primary: hsl(259, 50%, 98%);
-
-    --sb-width: 5rem;
-}
-
-.dark 
-{
     --color-primary: hsl(259, 50%, 10%);
     --color-secondary: hsl(259, 50%, 90%);
     --color-tertiary: hsl(319, 80%, 80%);
     --color-accent: hsl(199, 80%, 80%);
     --pre-color-primary: hsl(259, 50%, 15%);
+
+    --sb-width: 5rem;
+}
+
+.light-mode
+{
+    --color-primary: hsl(259, 50%, 90%);
+    --color-secondary: hsl(259, 50%, 10%);
+    --color-tertiary: hsl(319, 80%, 20%);
+    --color-accent: hsl(199, 80%, 20%);
+    --pre-color-primary: hsl(259, 50%, 98%);
 }
 
 
@@ -168,7 +168,7 @@ body.sb-expanded aside .fa-angle-double-right {
 
 
 /* Button */
-#dark_mode_toggle 
+#theme-toggle 
 {
     cursor: pointer;
     font-weight: normal;
