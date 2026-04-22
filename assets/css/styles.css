@@ -19,7 +19,7 @@
     --color-warning: hsla(48, 100%, 50%);
     --warning-background: hsl(48, 100%, 85%, 0.8);
 
-    --sb-width: 5rem;
+    --sb-width: 18rem;
 }
 
 .light-mode
@@ -57,8 +57,8 @@ main {
         margin-left 0.2s ease;
 }
 
-body.sb-expanded {
-    --sb-width: 18rem;
+body.sb-collapsed {
+    --sb-width: 5rem;
 }
 
 .c1 
@@ -105,6 +105,7 @@ h1
 .sidebar nav 
 {
     height: 100%;
+    cursor: pointer;
 }
 
 .sidebar nav ul 
@@ -116,21 +117,21 @@ h1
     gap: 0.25rem;
 }
 
-:not(body.sb-expanded) .sidebar nav a span {
-    opacity: 0;
-    visibility: hidden;
+/* Update elements when sidebar is collapsed */
+:not(body.sb-collapsed) .sidebar nav a span {
+    opacity: 1;
+    visibility: visible;
     transition:
         opacity 0.2s ease,
         visibility 0.2s ease;
 }
 
-/* Update elements when sidebar is expanded */
-body.sb-expanded .sidebar nav a span {
-    opacity: 1;
-    visibility: visible;
+body.sb-collapsed .sidebar nav a span {
+    opacity: 0;
+    visibility: hidden;
 }
 
-body.sb-expanded aside .fa-angle-double-right {
+body.sb-collapsed aside .fa-angle-double-left {
     rotate: 180deg;
 }
 
@@ -140,20 +141,19 @@ body.sb-expanded aside .fa-angle-double-right {
     align-items: center;
     gap: 0.7rem;
     padding: 0.7rem 0.7rem;
+    border-radius: 0.5rem;
     font-size: 16pt;
     text-decoration: none;
     color: var(--color-accent);
     transition:
-        background-color 0.5s ease, 
-        color 0.5s ease,
-        border-radius 0.5s ease;
+        background-color 0.3s ease, 
+        color 0.3s ease;
 }
 
 .sidebar nav a.active-page,
 .sidebar nav a:hover,
 .sidebar nav a:focus-visible 
 {
-    border-radius: 0.5rem;
     color: var(--pre-color-primary);
     background-color: var(--color-accent);
 }
@@ -173,7 +173,7 @@ body.sb-expanded aside .fa-angle-double-right {
 }
 
 /* Button */
-#theme-toggle 
+#theme-toggle, #toggle-sidebar
 {
     cursor: pointer;
     font-weight: normal;
@@ -195,8 +195,9 @@ body.sb-expanded aside .fa-angle-double-right {
     font: 800 2rem/1em var(--ff);
     color: var(--color-warning);
     display: flex;
-    padding: 2rem 0rem 2rem 9rem;
+    padding: 2rem;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
 
     background: var(--warning-background);

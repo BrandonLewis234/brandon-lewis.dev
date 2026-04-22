@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function()  {
 
 // Save sidebar state in local web storage to keep a persistent state choice on page reload.
 document.addEventListener('DOMContentLoaded', function() {
-    const expandSidebar = document.querySelector('[data-expand-sidebar]');
+    const collapseSidebar = document.querySelector('[data-collapse-sidebar]');
     const element = document.body;
 
     // Check localStorage for the sidebar state on load
@@ -34,13 +34,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Toggle sidebar on click
-    expandSidebar.addEventListener('click', function(e) {
-        e.preventDefault();
-        element.classList.toggle('sb-expanded');
-        const isExpanded = element.classList.contains("sb-expanded");
-        localStorage.setItem("sidebarState", isExpanded ? "sb-expanded" : "");
+    collapseSidebar.addEventListener('click', function(e) {
+        const ignoredElement = e.target.closest('[href], #theme-toggle');
+
+        // If no such element is found, proceed with the toggle logic
+        if (!ignoredElement) {
+            e.preventDefault();
+            element.classList.toggle('sb-collapsed');
+            const isExpanded = element.classList.contains("sb-collapsed");
+            localStorage.setItem("sidebarState", isExpanded ? "sb-collapsed" : "");
+        }
     });
 });
+
 
 // =============
 // Theme Toggle
