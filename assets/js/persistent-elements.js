@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const collapseSidebar = document.querySelector('[data-collapse-sidebar]');
     const element = document.body;
 
-    // Check localStorage for the sidebar state on load
     const storedSidebarState = localStorage.getItem("sidebarState");
     if (storedSidebarState) {
         element.classList.add(storedSidebarState);
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     collapseSidebar.addEventListener('click', function(e) {
         const ignoredElement = e.target.closest('[href], #theme-toggle');
 
-        // If no such element is found, proceed with the toggle logic
         if (!ignoredElement) {
             e.preventDefault();
             element.classList.toggle('sb-collapsed');
