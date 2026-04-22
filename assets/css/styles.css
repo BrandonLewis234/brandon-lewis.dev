@@ -13,7 +13,7 @@
     --color-primary: hsl(259, 50%, 10%);
     --color-secondary: hsl(259, 50%, 90%);
     --color-tertiary: hsl(319, 80%, 80%);
-    --color-accent: hsl(199, 80%, 80%);
+    --color-accent: hsl(125, 80%, 80%);
     --pre-color-primary: hsl(259, 50%, 15%);
 
     --color-warning: hsla(48, 100%, 50%);
@@ -27,7 +27,7 @@
     --color-primary: hsl(259, 50%, 90%);
     --color-secondary: hsl(259, 50%, 10%);
     --color-tertiary: hsl(319, 80%, 20%);
-    --color-accent: hsl(199, 80%, 20%);
+    --color-accent: hsl(145, 29%, 41%);
     --pre-color-primary: hsl(259, 50%, 98%);
 
     --color-warning: hsla(48, 100%, 50%);
@@ -169,6 +169,7 @@ body.sb-expanded aside .fa-angle-double-right {
 {
     margin-top: auto;
     padding-bottom: 2rem;
+    text-wrap: nowrap;
 }
 
 /* Button */
