@@ -16,8 +16,17 @@
     --color-accent: hsl(125, 80%, 80%);
     --pre-color-primary: hsl(259, 50%, 15%);
 
-    --color-warning: hsla(48, 100%, 50%);
-    --warning-background: hsl(48, 100%, 85%, 0.8);
+    --color-info: hsl(207, 100%, 30%);
+    --background-info: hsl(195, 100%, 87%);  
+
+    --color-success: hsl(103, 100%, 23%);
+    --background-success: hsl(82, 66%, 85%);  
+
+    --color-warning: hsl(36, 100%, 31%);
+    --background-warning: hsl(48, 97%, 85%);
+
+    --color-error: hsl(357, 100%, 42%);
+    --background-error: hsl(0, 100%, 86%);
 
     --sb-width: 18rem;
 }
@@ -29,8 +38,6 @@
     --color-tertiary: hsl(319, 80%, 20%);
     --color-accent: hsl(145, 29%, 41%);
     --pre-color-primary: hsl(259, 50%, 98%);
-
-    --color-warning: hsla(48, 100%, 50%);
 }
 
 
@@ -179,31 +186,70 @@ body.sb-collapsed aside .fa-angle-double-left {
     font-weight: normal;
 }
 
-/* Warning styling */
-#warning:before {
-    position: absolute;
-    content: '\f071';
+/* Message styling */
+.msg:before 
+{
     font-family: 'Font Awesome 7 Free';
-    color: var(--warning-border);
-    padding: 0.8rem;
-    inset: 0;
 }
 
-#warning
+.msg
 {
-    position: relative;
-    font: 800 2rem/1em var(--ff);
-    color: var(--color-warning);
+    width: fit-content;
+    height: auto;
+    margin: 0 auto 0.5rem;
+    font: 800 1.5rem/1em var(--ff);
     display: flex;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
+    flex-flow: row;
+    padding: 1rem;
     gap: 1rem;
 
-    background: var(--warning-background);
-    border: 0.5rem solid var(--color-warning);
     border-radius: 1rem;
 }
+
+#info:before 
+{
+    content: '\f05a';
+}
+
+#success:before 
+{
+    content: '\f00c';
+}
+
+#warning:before 
+{
+    content: '\f071';
+}
+
+#error:before
+{
+    content: '\f057';
+}
+
+#info
+{
+    color: var(--color-info);
+    background: var(--background-info);
+}
+
+#success 
+{
+    color: var(--color-success);
+    background: var(--background-success);
+}
+
+#warning 
+{
+    color: var(--color-warning);
+    background: var(--background-warning);
+}
+
+#error 
+{
+    color: var(--color-error);
+    background: var(--background-error);
+}
+
 
 /* Screen size controls */
 @media (max-width: 800px) 

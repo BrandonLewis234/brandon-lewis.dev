@@ -1,62 +1,38 @@
 <!DOCTYPE HTML>
 <html>
+
+
 <head>
     <link href="assets/css/styles.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/38ef0d6706.js" crossorigin="anonymous"></script>
-</head>
-<body>
     <script src="assets/js/persistent-elements.js"></script>
-    
-    <!-- Adjustable Sidebar -->
-    <aside class="sidebar" data-collapse-sidebar>
-        <nav>
-            <ul>
-                <li>
-                    <a id="toggle-sidebar">
-                        <i class="fa fa-angle-double-left"></i>
-                        <span>Collapse</span>
-                    </a>
-                </li>                
-                <li>
-                    <a href="index.html" class="active-page">
-                        <i class="fa fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-book"></i>
-                        <span>Documentation</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-lightbulb"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>                 
-                <li>
-                    <a href="#">
-                        <i class="fa fa-cog"></i>
-                        <span>Settings</span>
-                    </a>
-                </li>      
-                <li>
-                    <a onclick="themeToggle()" id="theme-toggle">
-                        <i class="fa fa-moon"></i>
-                        <span>Toggle Dark Mode</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){    
+        $("#sidebar").load("sidebar.html", function() {
+            let element = document.getElementById('index');
+            element.classList.add("active-page");
+
+        });
+            $("#header").load("header.html"); 
+            $("#footer").load("footer.html"); 
+        });
+    </script>     
+</head>
+
+
+<body>
+    <div id="header"></div>
+    <div id="sidebar" data-collapse-sidebar></div>
+    <div id="footer"></div>
 
     <main>
         <h1>Welcome!</h1>
-        <span id="warning">
-            <i class="fa fa-screwdriver-wrench"></i>
-            <p>This webpage is under construction. Please come back later!</p>
-        </span>
+        <div class="msg" id="warning">This webpage is under construction. Please come back later!</div>
     </main>
 
 </body>
