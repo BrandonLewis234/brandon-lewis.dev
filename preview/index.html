@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+    <title>Preview</title>
+    <link href="../assets/css/styles.css" type="text/css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/38ef0d6706.js" crossorigin="anonymous"></script>
+    <script src="../assets/js/persistent-elements.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        $(function(){    
+        $("#sidebar").load("../sidebar.html", function() {
+            let element = document.getElementById('preview');
+            element.classList.add("active-page");
+
+        });
+            $("#header").load("../header.html"); 
+            $("#footer").load("../footer.html"); 
+        });
+    </script>     
+</head>
+
+
+<body>
+    <div id="header"></div>
+    <div id="sidebar" data-collapse-sidebar></div>
+    <div id="footer"></div>
+
+    <main>
+        <div class="msg" id="info">info example</div>
+        <div class="msg" id="success">success example</div>
+        <div class="msg" id="warning">warning example</div>
+        <div class="msg" id="error">error example</div>
+    </main>
+
+</body>
+</html>
