@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
 // =============
 
 function screenIsSmall() {
-    return window.innerWidth <= 1024;
+    return window.innerWidth <= 1200;
 }
 
 // Save sidebar state in local web storage to keep a persistent state choice on page reload.
