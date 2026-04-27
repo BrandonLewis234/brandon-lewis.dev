@@ -1,0 +1,75 @@
+/* Button */
+#theme-toggle, #toggle-sidebar
+{
+    cursor: pointer;
+    font-weight: normal;
+}
+
+/* Message styling */
+.msg:before 
+{
+    font-family: 'Font Awesome 7 Free';
+}
+
+.msg:hover
+{
+    filter: brightness(98%);
+}
+
+.msg
+{
+    width: fit-content;
+    height: auto;
+    margin: 0 auto 0.5rem;
+    font: 800 1.5rem/1em var(--ff);
+    display: flex;
+    flex-flow: row;
+    padding: 1rem;
+    gap: 1rem;
+
+    border-radius: 1rem;
+}
+
+#info:before 
+{
+    content: '\f05a';
+}
+
+#success:before 
+{
+    content: '\f00c';
+}
+
+#warning:before 
+{
+    content: '\f071';
+}
+
+#error:before
+{
+    content: '\f057';
+}
+
+#info
+{
+    color: var(--color-info);
+    background: var(--background-info);
+}
+
+#success 
+{
+    color: var(--color-success);
+    background: var(--background-success);
+}
+
+#warning 
+{
+    color: var(--color-warning);
+    background: var(--background-warning);
+}
+
+#error 
+{
+    color: var(--color-error);
+    background: var(--background-error);
+}
