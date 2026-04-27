@@ -40,6 +40,12 @@
     --pre-color-primary: hsl(259, 50%, 98%);
 }
 
+/* Stop page animations while page is loading */
+.preload *
+{ 
+    transition: none !important;
+    animation-duration: 0.001s !important; 
+}
 
 body 
 {
@@ -57,9 +63,36 @@ body
     font: var(--p);
 }
 
+#header,
+#footer,
+#content
+{
+    padding: 0 1rem 0 1rem;
+}
+
+#header,
+#footer 
+{
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 0 1rem 0 1rem;
+    display: flex;
+}
+
+#header 
+{
+    width: 100%;
+    top: 0;
+}
+
+#footer
+{
+    width: 100%;
+    bottom: 0;
+}
+
 main {
-    margin-left: 5rem;
-    padding: 1rem 2rem;
+    margin-left: 2rem;
     transition:
         margin-left 0.2s ease;
 }
@@ -252,7 +285,16 @@ body.sb-collapsed aside .fa-angle-double-left {
 
 
 /* Screen size controls */
-@media (max-width: 800px) 
+@media (max-width: 1240px)
+{
+    main
+    {
+        margin-top: -0.5rem;
+        margin-left: 5rem;
+    }
+}
+
+@media (max-width: 600px) 
 {
     body 
     {
@@ -264,12 +306,52 @@ body.sb-collapsed aside .fa-angle-double-left {
         width: 90%;
         padding: 20px;
     }
+    main
+    {
+        margin-top: 5rem;
+        margin-left: -2rem;
+    }
+    :not(body.sb-collapsed) .sidebar nav ul
+    {
+        flex-flow: column;
+        gap: 1rem;
+    }
+    body.sb-collapsed .sidebar nav ul
+    {
+        flex-flow: row;
+        gap: 1rem;
+    }
+    :not(body.sb-collapsed) .sidebar
+    {
+        width: 100%;
+        height: 100%;
+    }
+    body.sb-collapsed .sidebar
+    {
+        width: 100%;
+        height: var(--sb-width);
+    }    
+    .sidebar nav a
+    {    
+        width: 50%;
+    }
+    body.sb-collapsed .sidebar nav a span 
+    {
+        position: absolute;
+        height: 0;
+        overflow: visible;
+    }    
+    body.sb-collapsed .sidebar nav li:last-child
+    {
+        margin-top: 0;
+    }
 }
 
 @media (min-width: 800px)
 {
     main
     {
-        margin-left: var(--sb-width)
+        margin-top: -0.5rem;
+        margin-left: var(--sb-width);
     }
 }

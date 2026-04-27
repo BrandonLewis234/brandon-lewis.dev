@@ -17,10 +17,17 @@ document.addEventListener('DOMContentLoaded', function()  {
     }
 });
 
+window.addEventListener("load", () => {
+    document.body.classList.remove("preload");
+});
 
 // =============
 // Sidebar
 // =============
+
+function screenIsSmall() {
+    return window.innerWidth <= 1024;
+}
 
 // Save sidebar state in local web storage to keep a persistent state choice on page reload.
 document.addEventListener('DOMContentLoaded', function() {
@@ -28,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const element = document.body;
 
     const storedSidebarState = localStorage.getItem("sidebarState");
-    if (storedSidebarState) {
+    if (screenIsSmall()) {
+        element.classList.add("sb-collapsed");
+    }
+    else if (storedSidebarState) {
         element.classList.add(storedSidebarState);
     }
 
