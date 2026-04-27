@@ -97,7 +97,6 @@ main
 #footer
 {
     margin-top: 5rem;
-    margin-bottom: -2rem;
     inset: 0 auto 0 0;
 }
 
@@ -220,7 +219,7 @@ body.sb-collapsed aside .fa-angle-double-left {
     }
     #footer 
     {
-        margin-bottom: -1.5rem;
+        margin-bottom: -1.8rem;
     }
     main,
     #header,
@@ -283,7 +282,7 @@ body.sb-collapsed aside .fa-angle-double-left {
     }
     #footer 
     {
-        margin-bottom: -1.5rem;
+        margin-bottom: -1.8rem;
     }
 }
 
@@ -296,5 +295,9 @@ body.sb-collapsed aside .fa-angle-double-left {
     {
         padding-left: 2.5rem;
         margin-left: var(--sb-width);
+    }
+    #footer 
+    {
+        margin-bottom: -2rem;
     }
 }
