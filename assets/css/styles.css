@@ -30,6 +30,8 @@
     --background-error: hsl(0, 100%, 86%);
 
     --sb-width: 18rem;
+    --sb-adjustment: 19.5rem;
+    --sb-min-adjustment: 6.5rem;
 }
 
 .light-mode
@@ -110,6 +112,7 @@ main {
 
 body.sb-collapsed {
     --sb-width: 5rem;
+    --sb-adjustment: var(--sb-min-adjustment);
 }
 
 a 
@@ -293,7 +296,7 @@ body.sb-collapsed aside .fa-angle-double-left {
     {
         margin-top: -0.5rem;
         padding-left: 2.5rem;
-        margin-left: 5rem;
+        margin-left: var(--sb-min-adjustment);
     }
     #footer 
     {
@@ -309,7 +312,7 @@ body.sb-collapsed aside .fa-angle-double-left {
     #footer
     {
         padding-left: 2.5rem;
-        margin-left: var(--sb-width);
+        margin-left: var(--sb-adjustment);
     }
     #footer 
     {
