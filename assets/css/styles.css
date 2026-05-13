@@ -268,6 +268,21 @@ body.sb-collapsed aside .fa-angle-double-left {
         margin-top: 0;
     }
 }
+/* Specific width breakpoint for dark mode toggle visibility*/
+@media only screen and (max-width: 464px) 
+{
+    .sidebar nav li:last-child
+    {
+        visibility: hidden;
+    }
+    body.sb-collapsed .sidebar nav li:last-child
+    {
+        position: fixed;
+        right: 0;
+        padding-right: 2rem;
+        margin-top: 0;
+    }    
+}
 
 /* Medium Size Devices */
 @media only screen and (min-width: 600px)

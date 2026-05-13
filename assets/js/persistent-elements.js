@@ -3,7 +3,8 @@
 // =============
 
 // Load all elements from local storage
-document.addEventListener('DOMContentLoaded', function()  {
+document.addEventListener('DOMContentLoaded', function()  
+{
     let element = document.body;
     let theme = localStorage.getItem("theme") || "";
     let sidebarState = localStorage.getItem("sidebar-extended") || "";
@@ -17,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function()  {
     }
 });
 
-window.addEventListener("load", () => {
+window.addEventListener("load", () => 
+{
     document.body.classList.remove("preload");
 });
 
@@ -25,12 +27,24 @@ window.addEventListener("load", () => {
 // Sidebar
 // =============
 
-function screenIsSmall() {
+function screenIsSmall()
+{
     return window.innerWidth <= 1200;
 }
 
+function toggleSidebar(e)
+{
+    e.preventDefault();
+    const element = document.body;
+
+    element.classList.toggle('sb-collapsed');
+    const isExpanded = element.classList.contains("sb-collapsed");
+    localStorage.setItem("sidebarState", isExpanded ? "sb-collapsed" : "");
+}
+
 // Save sidebar state in local web storage to keep a persistent state choice on page reload.
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function()
+    {
     const collapseSidebar = document.querySelector('[data-collapse-sidebar]');
     const element = document.body;
 
@@ -42,15 +56,21 @@ document.addEventListener('DOMContentLoaded', function() {
         element.classList.add(storedSidebarState);
     }
 
-    // Toggle sidebar on click
-    collapseSidebar.addEventListener('click', function(e) {
+    // Toggle sidebar when clicked anywhere other than an interactable element
+    collapseSidebar.addEventListener('click', function(e)
+    {
         const ignoredElement = e.target.closest('[href], #theme-toggle');
 
         if (!ignoredElement) {
-            e.preventDefault();
-            element.classList.toggle('sb-collapsed');
-            const isExpanded = element.classList.contains("sb-collapsed");
-            localStorage.setItem("sidebarState", isExpanded ? "sb-collapsed" : "");
+            toggleSidebar(e);
+        }
+    });
+    // Toggle sidebar when clicked off of it when screen is small
+    document.addEventListener('click', function(e) 
+    {
+        if (!(document.querySelector(".sidebar").contains(e.target)) && !(element.classList.contains("sb-collapsed")))
+        {
+            toggleSidebar(e);
         }
     });
 });
