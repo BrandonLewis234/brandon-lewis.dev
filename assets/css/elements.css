@@ -11,16 +11,11 @@
     font-family: 'Font Awesome 7 Free';
 }
 
-.msg:hover
-{
-    filter: brightness(98%);
-}
-
 .msg
 {
     width: fit-content;
     height: auto;
-    margin: 0 auto 0.5rem;
+    margin: 0 auto 0.5rem 0;
     font: 800 1.5rem/1em var(--ff);
     display: flex;
     flex-flow: row;
