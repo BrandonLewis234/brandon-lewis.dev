@@ -234,19 +234,16 @@ body.sb-collapsed aside .fa-angle-double-left {
     main
     {
         grid-column: span 3;
-        margin-top: 3rem;
+        margin-top: 0rem;
     }
     header,
     footer,
     .sidebar
     {
         margin-left: -0.5rem;
-
-    }
-    .sidebar
-    {
         grid-column: span 3;
         margin-top: -2rem;
+
     }
     header
     {
@@ -269,17 +266,34 @@ body.sb-collapsed aside .fa-angle-double-left {
     }
     :not(body.sb-collapsed) .sidebar
     {
-        position: fixed;
-        width: 100%;
-        height: 90%;
+        position: sticky;
+        width: 92vw;
+        height: 100%;
+    }
+    body:not(body.sb-collapsed)
+    {
+        background: var(--color-sidebar);
+    }
+    :not(body.sb-collapsed) main
+    {
+        visibility: hidden;
     }
     body.sb-collapsed .sidebar
     {
-        position: fixed;
+        position: sticky;
+        width: 100%;
         height: var(--sb-width);
         overflow-y: hidden;
         overflow-x: auto;
-    }    
+    }
+    body.sb-collapsed
+    {
+        background: var(--color-primary);
+    }  
+    body.sb-collapsed main
+    {
+        visibility: visible;
+    }  
     .sidebar nav a
     {    
         width: 50%;
@@ -289,13 +303,10 @@ body.sb-collapsed aside .fa-angle-double-left {
         position: absolute;
         height: 0;
         width: 0;
-        overflow: visible;
     }    
     body.sb-collapsed .sidebar nav li:last-child
     {
-        position: fixed;
         right: 0;
-        padding-right: 2rem;
         margin-top: 0;
     }
 }
@@ -331,13 +342,13 @@ body.sb-collapsed aside .fa-angle-double-left {
     .sidebar
     {
         transition: 
-            width 0.3s ease,
+            width 0.1s ease,
             height 0.001s ease;
     }
     :not(body.sb-collapsed) .sidebar
     {
         position: fixed;
-        height: 80%;
+        height: 89.5vh;
     }
     body.sb-collapsed .sidebar
     {
@@ -355,6 +366,9 @@ body.sb-collapsed aside .fa-angle-double-left {
     .sidebar
     {
         margin-left: -0.5rem;
+        transition: 
+            width 0.3s ease,
+            height 0.3s ease;        
     }
     :not(body.sb-collapsed) .sidebar
     {

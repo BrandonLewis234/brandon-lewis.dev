@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function()
     // Toggle sidebar when clicked off of it when screen is small
     document.addEventListener('click', function(e) 
     {
-        if (!(document.querySelector(".sidebar").contains(e.target)) && !(element.classList.contains("sb-collapsed")))
+        const isLink = e.target.tagName === 'A' || e.target.closest('a');
+        if (!(document.querySelector(".sidebar").contains(e.target)) && !(element.classList.contains("sb-collapsed")) && !(isLink))
         {
             toggleSidebar(e);
         }
