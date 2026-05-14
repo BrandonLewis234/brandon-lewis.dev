@@ -21,31 +21,28 @@
             element.classList.add("active-page");
 
         });
-            $("#header").load("../header.html"); 
-            $("#footer").load("../footer.html"); 
+            $("header").load("../header.html"); 
+            $("footer").load("../footer.html"); 
         });
     </script>     
 </head>
 
-<div id="header">
-    <h1>Header</h1>
-</div>
-
-<div id="sidebar" data-collapse-sidebar></div>
-
 <body class="container preload">
-    <main>
-        <div id="content">
-            <div class="msg" id="info">info example</div>
-            <div class="msg" id="success">success example</div>
-            <div class="msg" id="warning">warning example</div>
-            <div class="msg" id="error">error example</div>
-        </div>
-    </main>
+    <div class="grid-container">
+        <header></header>
+        
+        <div id="sidebar" data-collapse-sidebar></div>
+
+        <main>
+            <div style="padding-top: 2rem;">
+                <div class="msg" id="info">info example</div>
+                <div class="msg" id="success">success example</div>
+                <div class="msg" id="warning">warning example</div>
+                <div class="msg" id="error">error example</div>
+            </div>
+        </main>
+
+        <footer></footer>
+    </div>
 </body>
-
-<div id="footer">
-    <h1>Footer</h1>
-</div>
-
 </html>
