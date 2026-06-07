@@ -36,7 +36,7 @@
         }
         main
         {
-            visibility: hidden;
+            display: none;
         }
     }
 
@@ -80,7 +80,7 @@
         }
         main
         {
-            visibility: visible;
+            display: block;
         }  
     }
 }
