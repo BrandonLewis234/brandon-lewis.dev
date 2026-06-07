@@ -18,11 +18,6 @@ document.addEventListener('DOMContentLoaded', function()
     }
 });
 
-window.addEventListener("load", () => 
-{
-    document.body.classList.remove("preload");
-});
-
 // =============
 // Sidebar
 // =============
@@ -89,4 +84,12 @@ function themeToggle()
 
     let theme = element.classList.contains("light-mode") ? "light-mode" : "";
     localStorage.setItem("theme", theme);
+}
+
+// =============
+// Sub-menu Toggle
+// =============
+function toggleSubMenu(element)
+{
+    element.nextElementSibling.classList.toggle('show');
 }

@@ -1,7 +1,107 @@
+/* Navigation */
+.sidebar 
+{
+    grid-column: span 1;
+    background: var(--color-sidebar);
+    width: var(--sb-width);
+    padding: 0.2rem 2rem 0rem 0rem;
+    height: 95vh;
+    position: sticky;
+    align-self: start;
+    top: 5vh;
+}
+
+.sidebar ul 
+{
+    height: 100%;
+    cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+    gap: 0.25rem;
+}
+
+/* Update elements when sidebar is collapsed */
+:not(body.sb-collapsed) .sidebar a span,
+:not(body.sb-collapsed) .sidebar a span + i 
+{
+    flex-grow: 1;
+    opacity: 1;
+    visibility: visible;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+body.sb-collapsed .sidebar a span,
+body.sb-collapsed .sidebar a span + i
+{
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.sb-collapsed aside .fa-angle-double-left {
+    rotate: 180deg;
+}
+
+.sidebar a
+{
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 0.7rem;
+    border-radius: 0.5rem;
+    font-size: 16pt;
+    text-decoration: none;
+    color: var(--color-accent);
+    transition:
+        background-color 0.3s ease, 
+        color 0.3s ease;
+}
+
+.sidebar a.active-page,
+.sidebar a:hover,
+.sidebar a:focus-visible 
+{
+    color: var(--color-sidebar);
+    background-color: var(--color-accent);
+}
+
+/* Seperate out the first child to act as a collapse icon */
+.sidebar ul:not(.sub-menu) > li:first-child
+{
+    margin-bottom: 3rem;
+}
+
+/* Seperate out the last child to act as a dark mode toggle */
+.sidebar ul:not(.sub-menu) > li:last-child
+{
+    margin-top: auto;
+    padding-bottom: 2rem;
+    text-wrap: nowrap;
+}
+
+/* Sidebar dropdowns */
+.sidebar .sub-menu 
+{
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: 0.3s ease;
+
+    > div 
+    {
+        overflow: hidden;
+    }
+}
+
+.sidebar .sub-menu.show
+{
+    grid-template-rows: 1fr;
+}
+
 /* Button */
 #theme-toggle, #toggle-sidebar
 {
-    cursor: pointer;
     font-weight: normal;
 }
 
