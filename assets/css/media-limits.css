@@ -3,116 +3,119 @@
 /* Small Size Devices */
 @media only screen and (max-width: 600px) 
 {
-    .grid-container
-    { 
-        grid-template-rows: auto auto 1fr;
-    }
     main
     {
         grid-column: span 3;
-        width: 94vw;
+        align-items: center;
+        margin-right: 0.5rem;
+    }
+    .grid-container
+    { 
+        grid-template-rows: auto auto 1fr;
     }
     header,
     footer,
     .sidebar
     {
         grid-column: span 3;
+        transition:
+            width 0s ease;
     }
-    :not(body.sb-collapsed) .sidebar ul
+
+    :not(body.sb-collapsed)
     {
-        flex-flow: column;
-        gap: 1rem;
+        .sidebar
+        {
+            width: 100%;
+            height: 100%;
+
+            ul
+            {
+                flex-flow: column;
+            }
+        }
+        main
+        {
+            visibility: hidden;
+        }
     }
-    body.sb-collapsed .sidebar ul
-    {
-        flex-flow: row;
-        gap: 0.6rem;
-    }
-    :not(body.sb-collapsed) .sidebar
-    {
-        width: 100%;
-        height: 100%;
-    }
+
     body:not(body.sb-collapsed)
     {
         background: var(--color-sidebar);
     }
-    :not(body.sb-collapsed) main
-    {
-        visibility: hidden;
-    }
-    body.sb-collapsed .sidebar
-    {
-        width: 95vw;
-        height: var(--sb-width);
-        overflow-y: hidden;
-        overflow-x: auto;
-        transition:
-            width 0.001s ease;
-    }
+
     body.sb-collapsed
     {
         background: var(--color-primary);
-    }  
-    body.sb-collapsed main
-    {
-        visibility: visible;
-    }  
-    body.sb-collapsed .sidebar a
-    {    
-        width: 50%;
+
+        .sidebar
+        {
+            width: 95vw;
+            height: var(--sb-width);
+            overflow-y: hidden;
+            overflow-x: auto;
+            
+            a span, 
+            a span + i,
+            .sub-menu
+            {
+                display: none;
+                visibility: collapse;
+                height: 0;
+                width: 0;
+                transition:
+                    opacity 0.001s ease;
+            } 
+            ul
+            {
+                flex-flow: row;
+                gap: 0.6rem;
+            }  
+            li:last-child
+            {
+                right: 0;
+                margin-top: 0;
+            }
+        }
+        main
+        {
+            visibility: visible;
+        }  
     }
-    body.sb-collapsed .sidebar a span, 
-    body.sb-collapsed .sidebar a span + i,
-    .sub-menu
-    {
-        position: absolute;
-        visibility: collapse;
-        height: 0;
-        width: 0;
-        transition:
-            opacity 0.001s ease;
-    }    
-    body.sb-collapsed .sidebar li:last-child
-    {
-        right: 0;
-        margin-top: 0;
-    }
-}
-/* Specific width breakpoint for dark mode toggle visibility*/
-@media only screen and (max-width: 464px) 
-{
-    .sidebar li:last-child
-    {
-        visibility: hidden;
-    }
-    body.sb-collapsed .sidebar li:last-child
-    {
-        position: fixed;
-        right: 0;
-        padding-right: 2rem;
-        margin-top: 0;
-    }    
 }
 
 /* Medium Size Devices */
 @media only screen and (min-width: 600px)
 { 
-    body:not(body.sb-collapsed)
+
+    :not(body.sb-collapsed)
     {
-        background: var(--color-sidebar);
+        main
+        {
+            margin-left: -12rem;
+            z-index: 0;
+
+            transition:
+                margin-left 0.3s ease;
+        }
+
+        .sidebar 
+        {
+            float: left;
+            z-index: 1;
+        }
     }
-    :not(body.sb-collapsed) main
-    {
-        visibility: hidden;
-    }
+
     body.sb-collapsed
     {
         background: var(--color-primary);
-    }  
-    body.sb-collapsed main
-    {
-        visibility: visible;
+
+        main
+        {
+            margin-left: 0rem;
+        }  
+
     }  
 }
 
@@ -127,20 +130,24 @@
             width 0.3s ease,
             height 0.3s ease;        
     }
+
     body:not(body.sb-collapsed)
     {
         background: var(--color-primary);
+
+        main
+        {
+            margin-left: 0rem;
+        }
     }
-    :not(body.sb-collapsed) main
-    {
-        visibility: visible;
-    }
+
     body.sb-collapsed
     {
         background: var(--color-primary);
-    }  
-    body.sb-collapsed main
-    {
-        visibility: visible;
+
+        main
+        {
+            margin-left: 0rem;
+        }  
     }  
 }
