@@ -43,10 +43,16 @@
     --color-header-footer: hsl(263, 82%, 89%);
 }
 
+.preload *
+{ 
+    transition: none !important;
+    animation-duration: 0s !important; 
+}
+
 /* Set transition times for entire site */
 body,
-header,
-footer,
+template-header,
+template-footer,
 .sidebar
 {
     transition:
@@ -75,15 +81,15 @@ body
 
 /* Header and Footer */
 
-header,
-footer,
+template-header,
+template-footer,
 main
 {
     padding: 0 1rem;
 }
 
-header,
-footer 
+template-header,
+template-footer 
 {
     min-height: 5vh;
 
@@ -91,7 +97,7 @@ footer
     color: var(--color-secondary);
 }
 
-header img
+template-header img
 { 
     display: block;
     float: left;
@@ -100,14 +106,14 @@ header img
     height: 20px; 
 }
 
-header h1,
-footer h1
+template-header h1,
+template-footer h1
 {
     font: var(--h1-header-footer);
     padding: 0.25rem 0;
 }
 
-header 
+template-header 
 {
     grid-column: span 3;
     inset: 0 auto 0 0;
@@ -118,7 +124,7 @@ header
     top: 0;
 }
 
-footer
+template-footer
 {
     grid-column: span 3;
 }
