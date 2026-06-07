@@ -8,7 +8,6 @@ class templateHeader extends HTMLElement
     {
         this.innerHTML = 
         `
-            <script src="https://kit.fontawesome.com/38ef0d6706.js" crossorigin="anonymous"></script>
             <div>
                 <a href="https://brandon-lewis.dev"><img src="../favicon.ico"></img></a>
                 <h1>Brandon Lewis' Project Repository</h1>
@@ -53,9 +52,9 @@ class templateSidebar extends HTMLElement
                         <a onclick="toggleSubMenu(this)" href="#" id="projects dropdown">
                             <i class="fa fa-lightbulb"></i>
                             <span>Projects</span>
-                            <i class="fa fa-angle-down"></i>
+                            <i class="fa fa-angle-right"></i>
                         </a>
-                        <ul class="sub-menu">
+                        <ul class="sub-menu" aria-expanded="">
                             <div>
                                 <li><a href="#">Project 1</a></li>
                                 <li><a href="#">Project 2</a></li>

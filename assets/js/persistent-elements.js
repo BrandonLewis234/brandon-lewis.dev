@@ -95,6 +95,6 @@ function themeToggle()
 // =============
 function toggleSubMenu(element)
 {
-    element.nextElementSibling.classList.toggle('show');
+    element.nextElementSibling.setAttribute('aria-expanded', element.nextElementSibling.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
     element.querySelector('i:last-child').classList.toggle('rotate');
 }

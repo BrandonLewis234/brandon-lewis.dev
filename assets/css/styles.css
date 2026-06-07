@@ -151,7 +151,7 @@ body.sb-collapsed
     --sb-adjustment: var(--sb-min-adjustment);
 }
 
-a 
+a
 {
     font: 800 1rem/1em var(--ff);
     color: var(--color-accent);

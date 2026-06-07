@@ -29,6 +29,7 @@
     opacity: 1;
     visibility: visible;
     transition:
+        rotate 0.2s ease,
         opacity 0.2s ease,
         visibility 0.2s ease;
 }
@@ -40,7 +41,13 @@ body.sb-collapsed .sidebar a span + i
     visibility: hidden;
 }
 
-body.sb-collapsed aside .fa-angle-double-left {
+aside .fa-angle-double-left
+{
+    transition: 
+        rotate 0.2s ease;
+}
+body.sb-collapsed aside .fa-angle-double-left 
+{
     rotate: 180deg;
 }
 
@@ -87,20 +94,25 @@ body.sb-collapsed aside .fa-angle-double-left {
     display: grid;
     grid-template-rows: 0fr;
     transition: 0.3s ease;
+    padding-left: 3rem;
 
     > div 
     {
         overflow: hidden;
     }
+    a
+    {
+        font-weight: normal;
+    }
 }
 
-.sidebar .sub-menu.show
+.sidebar .sub-menu[aria-expanded="true"]
 {
     grid-template-rows: 1fr;
 }
 .rotate
 {
-    rotate: 180deg;
+    rotate: 90deg;
 }
 
 /* Button */
