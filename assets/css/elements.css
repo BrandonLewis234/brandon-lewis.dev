@@ -98,6 +98,10 @@ body.sb-collapsed aside .fa-angle-double-left {
 {
     grid-template-rows: 1fr;
 }
+.rotate
+{
+    rotate: 180deg;
+}
 
 /* Button */
 #theme-toggle, #toggle-sidebar

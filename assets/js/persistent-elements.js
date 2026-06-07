@@ -92,4 +92,5 @@ function themeToggle()
 function toggleSubMenu(element)
 {
     element.nextElementSibling.classList.toggle('show');
+    element.querySelector('i:last-child').classList.toggle('rotate');
 }
