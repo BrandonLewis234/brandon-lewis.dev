@@ -2,7 +2,7 @@
 
 /* Small Size Devices */
 @media only screen and (max-width: 600px) 
-{
+{    
     main
     {
         grid-column: span 3;
@@ -33,6 +33,10 @@
             {
                 flex-flow: column;
             }
+        }
+        aside .fa-angle-double-left 
+        {
+            rotate: 90deg;
         }
         main
         {
@@ -77,6 +81,10 @@
                 right: 0;
                 margin-top: 0;
             }
+        }
+        aside .fa-angle-double-left 
+        {
+            rotate: 270deg;
         }
         main
         {
