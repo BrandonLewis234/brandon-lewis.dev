@@ -21,9 +21,6 @@
         font-size: 16pt;
         text-decoration: none;
         color: var(--color-accent);
-        transition:
-            background-color 0.3s ease, 
-            color 0.3s ease;
     }
 
     a.active-page,
@@ -75,7 +72,7 @@
         }
     }
 
-    .sub-menu[aria-expanded="true"]
+    .sub-menu.show-submenu
     {
         grid-template-rows: 1fr;
     }

@@ -29,12 +29,19 @@ function screenIsSmall()
 
 function toggleSidebar(e)
 {
-
     const element = document.body;
 
     element.classList.toggle('sb-collapsed');
     const isExpanded = element.classList.contains("sb-collapsed");
     localStorage.setItem("sidebarState", isExpanded ? "sb-collapsed" : "");
+
+    if(isExpanded)
+    {
+        Array.from(document.getElementsByClassName("show-submenu")).forEach(element => {
+            element.classList.remove("show-submenu");
+            element.previousElementSibling.querySelector('i:last-child').classList.toggle('rotate');
+        });
+    }
 }
 
 // Save sidebar state in local web storage to keep a persistent state choice on page reload.
@@ -90,6 +97,17 @@ function themeToggle()
 // =============
 function toggleSubMenu(element)
 {
-    element.nextElementSibling.setAttribute('aria-expanded', element.nextElementSibling.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+    
+    element.nextElementSibling.classList.toggle("show-submenu");
     element.querySelector('i:last-child').classList.toggle('rotate');
+
+    if (screenIsSmall())
+    {
+        return;
+    }
+    
+    if(document.body.classList.contains("sb-collapsed"))
+    {
+        toggleSidebar();
+    }
 }

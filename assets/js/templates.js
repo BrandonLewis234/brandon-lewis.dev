@@ -49,12 +49,12 @@ class templateSidebar extends HTMLElement
                         </a>
                     </li>
                     <li>
-                        <a onclick="toggleSubMenu(this)" href="#" id="projects dropdown">
+                        <a onclick="toggleSubMenu(this)" href="#" id="projects">
                             <i class="fa fa-lightbulb"></i>
                             <span>Projects</span>
                             <i class="fa fa-angle-right"></i>
                         </a>
-                        <ul class="sub-menu" aria-expanded="">
+                        <ul class="sub-menu">
                             <div>
                                 <li><a href="#">Project 1</a></li>
                                 <li><a href="#">Project 2</a></li>
