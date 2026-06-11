@@ -7,18 +7,13 @@ document.addEventListener('DOMContentLoaded', function()
 {
     let element = document.body;
     let theme = localStorage.getItem("theme") || "";
-    let sidebarState = localStorage.getItem("sidebar-extended") || "";
 
     if (theme) {
         element.classList.add(theme);
     }
-
-    if (sidebarState) {
-        element.classList.add(sidebarState);
-    }
 });
 
-window.addEventListener("load", () => 
+window.addEventListener("load", function () 
 {
     document.body.classList.remove("preload");
 });
@@ -34,7 +29,7 @@ function screenIsSmall()
 
 function toggleSidebar(e)
 {
-    e.preventDefault();
+
     const element = document.body;
 
     element.classList.toggle('sb-collapsed');
@@ -86,7 +81,7 @@ function themeToggle()
     let element = document.body;
     element.classList.toggle("light-mode");
 
-    let theme = element.classList.contains("light-mode") ? "light-mode" : "";
+    const theme = element.classList.contains("light-mode") ? "light-mode" : "";
     localStorage.setItem("theme", theme);
 }
 

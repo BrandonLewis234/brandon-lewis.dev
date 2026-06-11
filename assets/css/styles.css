@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
+.preload *
+{ 
+    transition: none !important;
+    animation-duration: 0s !important; 
+}
+
 :root 
 {    
     --ff: "Syne", sans-serif;
@@ -43,12 +49,6 @@
     --color-header-footer: hsl(263, 82%, 89%);
 }
 
-.preload *
-{ 
-    transition: none !important;
-    animation-duration: 0s !important; 
-}
-
 /* Set transition times for most of the site */
 body,
 template-header,
@@ -58,7 +58,6 @@ template-footer,
     transition:
         width 0.3s ease,
         height 0.3s ease,
-        background 0.2s ease,
         visibility 0.2s ease;
 }
 
